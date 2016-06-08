@@ -7,15 +7,16 @@ namespace DemoWebForms.Models
     using System.Data.Entity.Spatial;
 
     [Table("Production.ProductCategory")]
-    public partial class ProductCategory
+    public partial class Category
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public ProductCategory()
+        public Category()
         {
-            ProductSubcategories = new HashSet<ProductSubcategory>();
+            ProductSubcategories = new HashSet<Subcategory>();
         }
 
-        public int ProductCategoryID { get; set; }
+        [Column("ProductCategoryID")]
+        public int CategoryID { get; set; }
 
         [Required]
         [StringLength(50)]
@@ -26,6 +27,6 @@ namespace DemoWebForms.Models
         public DateTime ModifiedDate { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<ProductSubcategory> ProductSubcategories { get; set; }
+        public virtual ICollection<Subcategory> ProductSubcategories { get; set; }
     }
 }

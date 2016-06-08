@@ -72,6 +72,6 @@ namespace DemoWebForms.Models
 
         public DateTime ModifiedDate { get; set; }
 
-        public virtual ProductSubcategory ProductSubcategory { get; set; }
+        public virtual Subcategory ProductSubcategory { get; set; }
     }
 }

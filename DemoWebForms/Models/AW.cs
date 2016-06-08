@@ -13,8 +13,10 @@ namespace DemoWebForms.Models
         }
 
         public virtual DbSet<Product> Products { get; set; }
-        public virtual DbSet<ProductCategory> ProductCategories { get; set; }
-        public virtual DbSet<ProductSubcategory> ProductSubcategories { get; set; }
+        public virtual DbSet<Category> Categories { get; set; }
+        public virtual DbSet<Subcategory> Subcategories { get; set; }
+        public virtual DbSet<Test> Tests { get; set; }
+
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
@@ -50,7 +52,7 @@ namespace DemoWebForms.Models
                 .Property(e => e.Style)
                 .IsFixedLength();
 
-            modelBuilder.Entity<ProductCategory>()
+            modelBuilder.Entity<Category>()
                 .HasMany(e => e.ProductSubcategories)
                 .WithRequired(e => e.ProductCategory)
                 .WillCascadeOnDelete(false);
