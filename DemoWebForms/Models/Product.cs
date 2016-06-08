@@ -58,7 +58,8 @@ namespace DemoWebForms.Models
         [StringLength(2)]
         public string Style { get; set; }
 
-        public int? ProductSubcategoryID { get; set; }
+        [Column("ProductSubCategoryID")]
+        public int? SubcategoryID { get; set; }
 
         public int? ProductModelID { get; set; }
 
@@ -72,6 +73,6 @@ namespace DemoWebForms.Models
 
         public DateTime ModifiedDate { get; set; }
 
-        public virtual Subcategory ProductSubcategory { get; set; }
+        public virtual Subcategory Subcategory { get; set; }
     }
 }
