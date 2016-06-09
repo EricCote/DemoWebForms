@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Web;
 using System.Web.ModelBinding;
@@ -76,7 +77,6 @@ namespace DemoWebForms
             if (ModelState.IsValid)
             {
                 db.SaveChanges();
-
             }
         }
 
@@ -92,7 +92,18 @@ namespace DemoWebForms
                 return;
             }
             db.Products.Remove(item);
-            db.SaveChanges();
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (DbUpdateConcurrencyException ex)
+            {
+                ModelState.AddModelError("", String.Format("Item {0} a été modifié depuis sa lecture", ProductID));
+            }
+            catch (DbUpdateException ex)
+            {
+                ModelState.AddModelError("", String.Format("Item {0} n'a pas pu être enlevé", ProductID));
+            }
 
         }
 
