@@ -9,7 +9,9 @@ namespace DemoWebForms.Models
     [Table("Person.StateProvince")]
     public partial class Province
     {
+        [Column("StateProvinceID")]
         public int ProvinceID { get; set; }
+
 
         [Required]
         [StringLength(3)]

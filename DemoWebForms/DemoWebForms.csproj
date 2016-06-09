@@ -202,6 +202,8 @@
     <Content Include="ListerProduits.aspx" />
     <Content Include="Merci.aspx" />
     <Content Include="Pays.aspx" />
+    <Content Include="Province.aspx" />
+    <Content Include="ProvinceFiltre.ascx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-2.2.3.js" />
@@ -442,6 +444,20 @@
       <DependentUpon>Pays.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Province.aspx.cs">
+      <DependentUpon>Province.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Province.aspx.designer.cs">
+      <DependentUpon>Province.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="ProvinceFiltre.ascx.cs">
+      <DependentUpon>ProvinceFiltre.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ProvinceFiltre.ascx.designer.cs">
+      <DependentUpon>ProvinceFiltre.ascx</DependentUpon>
+    </Compile>
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
