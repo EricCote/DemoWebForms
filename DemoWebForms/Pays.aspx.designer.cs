@@ -10,33 +10,33 @@
 namespace DemoWebForms {
     
     
-    public partial class SiteMaster {
+    public partial class Pays {
         
         /// <summary>
-        /// sm control.
+        /// txtFiltre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.ScriptManager sm;
+        protected global::System.Web.UI.WebControls.TextBox txtFiltre;
         
         /// <summary>
-        /// fauxContenu control.
+        /// btnFiltre control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder fauxContenu;
+        protected global::System.Web.UI.WebControls.Button btnFiltre;
         
         /// <summary>
-        /// MainContent control.
+        /// grdPays control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ContentPlaceHolder MainContent;
+        protected global::System.Web.UI.WebControls.GridView grdPays;
     }
 }

@@ -16,6 +16,9 @@ namespace DemoWebForms.Models
         public virtual DbSet<Category> Categories { get; set; }
         public virtual DbSet<Subcategory> Subcategories { get; set; }
         public virtual DbSet<Test> Tests { get; set; }
+        public virtual DbSet<Country> Countries { get; set; }
+        public virtual DbSet<Province> Provinces { get; set; }
+
 
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

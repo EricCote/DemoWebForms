@@ -186,6 +186,8 @@
     <Content Include="Content\Site.css" />
     <Content Include="Account\Web.config" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Heure.aspx" />
+    <Content Include="images\img10.jpg" />
     <Content Include="Infolettre.aspx" />
     <Content Include="liaison.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -199,6 +201,7 @@
     <None Include="Scripts\jquery-2.2.3.intellisense.js" />
     <Content Include="ListerProduits.aspx" />
     <Content Include="Merci.aspx" />
+    <Content Include="Pays.aspx" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Scripts\jquery-2.2.3.js" />
@@ -386,6 +389,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Heure.aspx.cs">
+      <DependentUpon>Heure.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Heure.aspx.designer.cs">
+      <DependentUpon>Heure.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Infolettre.aspx.cs">
       <DependentUpon>Infolettre.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -416,12 +426,21 @@
     </Compile>
     <Compile Include="Models\Abonnement.cs" />
     <Compile Include="Models\AW.cs" />
+    <Compile Include="Models\Country.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\InfolettreCtx.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\Category.cs" />
+    <Compile Include="Models\Province.cs" />
     <Compile Include="Models\Subcategory.cs" />
     <Compile Include="Models\Test.cs" />
+    <Compile Include="Pays.aspx.cs">
+      <DependentUpon>Pays.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pays.aspx.designer.cs">
+      <DependentUpon>Pays.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
