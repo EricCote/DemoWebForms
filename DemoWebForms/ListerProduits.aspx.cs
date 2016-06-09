@@ -107,5 +107,14 @@ namespace DemoWebForms
 
         }
 
+        // The id parameter should match the DataKeyNames value set on the control
+        // or be decorated with a value provider attribute, e.g. [QueryString]int id
+        public object DetailsView1_GetItem([Control]int? grdProduits)
+        {
+            if (grdProduits == null)
+                return null;
+            return db.Products.Find(grdProduits);
+        }
+
     }
 }
