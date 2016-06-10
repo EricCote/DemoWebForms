@@ -18,6 +18,7 @@
                     CssClass="text-danger" ErrorMessage="The email field is required." />
             </div>
         </div>
+
         <div class="form-group">
             <asp:Label runat="server" AssociatedControlID="Password" CssClass="col-md-2 control-label">Password</asp:Label>
             <div class="col-md-10">

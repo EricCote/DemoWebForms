@@ -33,6 +33,36 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <FilesToIncludeForPublish>OnlyFilesToRunTheApp</FilesToIncludeForPublish>
+    <ExcludeGeneratedDebugSymbol>false</ExcludeGeneratedDebugSymbol>
+    <IncludeIisSettings>false</IncludeIisSettings>
+    <PublishDatabases>true</PublishDatabases>
+    <DeployEncryptKey>password</DeployEncryptKey>
+    <PublishDatabaseSettings>
+      <Objects>
+        <ObjectGroup Name="DefaultConnection-Deployment" Order="1" Enabled="False">
+          <Destination Path="" />
+          <Object Type="DbFullSql">
+            <PreSource Path="Data Source=%28LocalDb%29\MSSQLLocalDB%3bAttachDbFilename=|DataDirectory|\aspnet-DemoWebForms-20160608081348.mdf%3bInitial Catalog=aspnet-DemoWebForms-20160608081348%3bIntegrated Security=True" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Debug\AutoScripts\DefaultConnection-Deployment_SchemaOnly.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+        <ObjectGroup Name="AW-Deployment" Order="2" Enabled="False">
+          <Destination Path="" />
+          <Object Type="DbFullSql">
+            <PreSource Path="Data Source=%28localdb%29\msSqlLocalDb%3bInitial Catalog=AdventureWorks2014%3bIntegrated Security=True%3bEncrypt=False%3bTrustServerCertificate=True%3bApplication Name=EntityFramework" ScriptSchema="True" ScriptData="False" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Debug\AutoScripts\AW-Deployment_SchemaOnly.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+        <ObjectGroup Name="Infolettre-Deployment" Order="3" Description="Changer la sécurité du dossier par la suite.">
+          <Destination Path="" />
+          <Object Type="DbFullSql">
+            <PreSource Path="Data Source=%28localdb%29\msSqlLocalDb%3bAttachDbFilename=|DataDirectory|\Infolettre.mdf%3bInitial Catalog=Infolettre%3bIntegrated Security=True%3bEncrypt=False" ScriptSchema="True" ScriptData="True" CopyAllFullTextCatalogs="False" DriDefaults="True" />
+            <Source Path="obj\Debug\AutoScripts\Infolettre-Deployment_SchemaAndData.sql" Transacted="True" />
+          </Object>
+        </ObjectGroup>
+      </Objects>
+    </PublishDatabaseSettings>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -185,10 +215,13 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Site.css" />
     <Content Include="Account\Web.config" />
+    <Content Include="Ecriture.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Heure.aspx" />
     <Content Include="images\img10.jpg" />
     <Content Include="Infolettre.aspx" />
+    <Content Include="Lecture.aspx" />
+    <Content Include="Lenteur.aspx" />
     <Content Include="liaison.aspx" />
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
@@ -198,6 +231,8 @@
     <Content Include="Content\bootstrap.css.map" />
     <Content Include="Content\bootstrap-theme.min.css.map" />
     <Content Include="Content\bootstrap-theme.css.map" />
+    <None Include="Properties\PublishProfiles\IIS Local.pubxml" />
+    <None Include="Properties\PublishProfiles\Package.pubxml" />
     <None Include="Scripts\jquery-2.2.3.intellisense.js" />
     <Content Include="ListerProduits.aspx" />
     <Content Include="Merci.aspx" />
@@ -244,7 +279,9 @@
     <Content Include="Validation.aspx" />
     <Content Include="ViewStateTests.aspx" />
     <Content Include="ViewSwitcher.ascx" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Bundle.config" />
     <Content Include="packages.config" />
     <None Include="Project_Readme.html" />
@@ -388,6 +425,13 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Ecriture.aspx.cs">
+      <DependentUpon>Ecriture.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Ecriture.aspx.designer.cs">
+      <DependentUpon>Ecriture.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -404,6 +448,20 @@
     </Compile>
     <Compile Include="Infolettre.aspx.designer.cs">
       <DependentUpon>Infolettre.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lecture.aspx.cs">
+      <DependentUpon>Lecture.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Lecture.aspx.designer.cs">
+      <DependentUpon>Lecture.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Lenteur.aspx.cs">
+      <DependentUpon>Lenteur.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Lenteur.aspx.designer.cs">
+      <DependentUpon>Lenteur.aspx</DependentUpon>
     </Compile>
     <Compile Include="liaison.aspx.cs">
       <DependentUpon>liaison.aspx</DependentUpon>
