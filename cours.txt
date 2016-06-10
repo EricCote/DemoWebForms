@@ -1,0 +1,406 @@
+.NET Framework 4.6
+
+Environnement d'exécution (Common languagage runtime)
+Librairies (dll)
+
+
+system.web.dll
+
+ASP.NET
+-WebForm
+-MVC
+-WebPages
+
+
+
+.aspx           WebForms
+.cshtml .vbhtml WebPages
+(SansExtension) MVC
+
+Serveur Web     (Asp.net)      .aspx, .cshtml, asax, asmx, ashx, etc. 
+                               ----> plusieurs dll cachées
+Visual Studio   (Compilateur)  .vb .cs   ----->  une dll (nom du projet)
+
+
+contrôle:  runat="server"  
+Contrôles html:  Runat="server" sur une balise html. (div, h1, p, input, etc)
+Contrôles server: Runat="server" sur une balise préfixée (asp:button, asp: textbox)
+
+
+Contrôles server ont deux avantages: 
+1. nous avons une sytaxe plus près du .NET que du HTML
+2. Nous avons accès à des événements riches
+
+Contrôles html ont deux avantages:
+1. Plus près de la syntaxe html.
+2. Plus grand contrôle sur le html généré.
+
+
+
+
+
+
+
+
+
+
+test.aspx:
+
+label    ->  span
+textbox  ->  input type=text
+checkbox ->  input type=chekbox
+dropdownlist -> select pas de size
+Calendar ->  table
+image    ->  img
+ListBox  ->  select size=
+radiobutton -> input type=radio
+button      -> input type=submit
+literal     -> RIEN string
+placeholder -> RIEN conteneur
+panel       -> div
+
+
+Date  -> string     Format
+String -> Date      Parsing  
+
+
+----------------------
+
+Data Access
+
+ADO.NET (code  Dataset + DataReader, DataConnection, DataCommand, DataAdapter )
+2001-2010
+
+ASP.NET Data Providers.  (problématique, car sans code. 2005-2009)
+
+Linq-to-SQL (2009-2010)  Ancêtre de Entity Framework
+
+EntityFramework (2010-2016)   V6
+
+
+
+
+
+
+ADO.NET:   Connecté  (DataConnection, DataCommand, DataReader, DataAdapter)
+         déconnecté  (Dataset, DataTable, DataRow, DataColumn, Constraint, DataRelation)
+
+
+Déconnecté: on travaille avec des objets qui ressemblent à la base de données. 
+            on se connecte à la bd un moment, et on copie les infos de la bd aux objects
+            déconnectés. On transfère les données.
+
+Connecté: on travaille directement avec la Base de Données à traves un ensemble de classes
+          nommé le "data provider". 
+          -System.Data.OleDb
+          -System.Data.Odbc
+          -System.Data.SqlClient
+          -System.Data.Oracle (obsolete, utilisez plutôt ODAC.Oracle)
+
+POCO= Plain Old Clr Object  (objets .net Normaux, POJO)
+
+
+Entity Framework: Architecture pour travailler avec des bases de données. 
+                  on travaille avec des POCO plutôt que les classes déconnectées (DataSet).
+                  Les Pocos peuvent être générés par un générateur de code
+                  on regroupe les tables dans des objets de collection (Dbset)
+                  Il est possible d'utiliser des requêtes Linq sur ces collections, 
+                  ce qui retournera une référence de type IQueryable.
+
+Opérations LINQ: Filtrer (where) Trier (OrderBy)  Projeter (Select), Aggregats (Groupby)
+
+
+DDL= Data definition language (Create, Alter, drop TABLE)
+
+Visual studio
+
+
+--------------------------------------------
+AJAX :  Asynchronous Javasript And Xml (XmlHttpRequest: XHR)
+
+JQuery  (Ajax simplifié)
+
+
+UpdatePanel: controle de WebForms qui permet de faire du AJAX avec des contrôles serveurs.
+Mais il y des limitations:
+1. C'est semi-synchrone. 
+2. Le viewstate pourrait être corrompu.
+
+
+
+Ajax Control Toolkit:  Téléchargement pour avoir des contrôles AJAX additionnels. 
+Moins limitatif que le update panel, permet des fonctions additionnelles. 
+Maintenant Open Source, mis à jour 3-4 fois par année. 
+
+
+Infragistic, Telerik, ComponentOne, DevExpress, autres : 
+fournissent des contrôles AJAX encore plus évolués.
+
+
+---------------------------------------------------------
+
+
+
+VS       .NET Framework   
+
+VS2010   4.0
+vs2012   4.5
+vs2013   4.5.1
+vs2015   4.6     WPF UWP  ASP.NET
+vs2015u2 4.6.2
+
+VS "15" 2017   4.7
+
+
+Web Forms         (2001)  (MVC)  
+XML Web Services  (2001)  (wcf)
+WCF               (2006)  (Web Api)
+MVC               (2009)
+WebPages (razor)  (2011)
+Web Api           (2012)
+Signal R          (2013)
+ASP.NET Core      (2016)  
+
+
+
+
+http://www.microsoft.com/learning/companionMoc
+
+
+Code Snippet pour VB
+
+
+
+
+
+.NET Framework: Infrastructrure de développement que 
+                l'on peut installer sur windows
+      composé de deux éléments:
+1. Common Language Runtime (CLR):  Environnement d'exécution pour les 
+   apps .NET
+2. Librairies (dll): l'ensemble des fonctionnalités disponible pour 
+   les programmeurs .NET 
+   WebForms ASP.NET-- System.Web.dll
+   WPF -- System.Windows.dll
+   WCF -- System.Service.dll
+   XML -- System.Xml.dll
+   ADO.NET -- System.Data.dll
+   Entity fx -- System.Entity.dll  --  Microsoft.Entity.dll
+
+
+CLR fournit des services au programmeur:
+-Chargement des librairies
+-Sécurité
+-Sécurité des types 
+-Compilation JIT (just in time)  (IL Intermediate Code -> code natif)
+-Deboggage
+-Exceptions et erreurs
+-interop COM
+-Threading
+-Options native et librairies
+
+
+
+
+
+
+
+
+Sujets:
+Tracing             2b.
+Déboggage           2.
+Services Web + API  4.
+Gestion de l'état   5.
+ -Cookies
+ -Session
+ -Application
+Web.config          6.
+Deploiement           1.
+Identité et sécurité  3.
+
+
+ASMX   XML-SOAP  (2001)
+WCF    WS-*      (2006)
+WebApi JSON      (2012)
+
+
+
+
+
+
+
+
+
+
+
+
+
+Identification:  
+-Nom + mot de passe. 
+-Cookie d'identification/session
+
+IIS:  - Identification de base (nom + mot de passe) (Domaine ou local)
+      - Identification Digest  (nom + mot de passe) (Domaine ou local) (encrypté)
+    --- Identification Windows (ticket Kerberos (ou NTLM)) (Domaine ou local) (encrypté)
+Idéal pour intranet
+
+Désactiver Identification IIS
+Activer Identification ASP.NET
+- Windows Forms           (2001)
+- Authentication provider (2005)
+- Identity Framework      (2013)
+
+Nom d'usager + mot de passe   Local
+
+Nom d'usager + mot de passe  d'un tiers-parti 
+Open authentication OAuth:  d'utiliser un tiers parti pour s'identifier
+
+Cookie d'identification/cookie
+
+1. Regarder identification
+2. regarder le rôle
+3. regarder les permissions
+
+- on gère la sécurité au niveau 
+1. du site web  (web.config)
+2. page         (aspx)
+3. code         (cs ou vb)
+
+
+
+
+
+  
+
+
+
+                         
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+
+              
+                  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
